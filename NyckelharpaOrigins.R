@@ -5,7 +5,8 @@ library(rvest)
 library(readxl)
 library(mapview)
 
-x <- read_xlsx("NyckelharpaHistoryData.xlsx")
+x <- read_xlsx("NyckelharpaHistoryData.xlsx") %>%
+  arrange(DatesBackTo)
 
 image75 <- popupImage(x$Localimage, 
                       src = "local", 
@@ -26,7 +27,10 @@ leaflet(x) %>%
       "</div><br>",
       image75,
       "</div>"
-    )
-  )
+    ), 
+    group = x$DatesBackTo
+  ) %>%
+  addLayersControl(overlayGroups = x$DatesBackTo,
+                   options = layersControlOptions(collapsed = FALSE))
   
 
