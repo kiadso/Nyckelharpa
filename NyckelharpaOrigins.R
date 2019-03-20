@@ -7,12 +7,10 @@ library(mapview)
 
 x <- read_xlsx("NyckelharpaHistoryData.xlsx")
 
-description <- paste0("<br><b>Dates Back To ",
-                    x$DatesBackTo,
-                    "</b><br>",
-                    x$Description)
-
-image75 <- popupImage(x$Localimage, src = "local", width = 100)
+image75 <- popupImage(x$Localimage, 
+                      src = "local", 
+                      width = "200px", 
+                      height = "100%")
 
 leaflet(x) %>%
   setView(lng = 16.5, lat = 57, zoom = 3.5) %>%
@@ -21,15 +19,14 @@ leaflet(x) %>%
     lng = ~ Longitude,
     lat = ~ Latitude,
     popup = paste0(
-      "<div><h3><b>Dates Back To: ",
+      "<div style=\"background-color: #fff; padding: 8px\"><h3><b>Dates Back To ",
       x$DatesBackTo,
-      "</b></h3>",
+      "</b></h3><div>",
       x$Description,
-      "</br><img src=\"",
+      "</div><br>",
       image75,
-      "\"></div>"
+      "</div>"
     )
   )
   
-
 
