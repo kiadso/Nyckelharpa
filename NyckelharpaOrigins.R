@@ -20,13 +20,15 @@ leaflet(x) %>%
     lng = ~ Longitude,
     lat = ~ Latitude,
     popup = paste0(
-      "<div style=\"background-color: #fff; padding: 8px\"><h3><b>Dates Back To ",
+      "<div style=\"background-color: #fff; padding: 8px;\"><h3><b>Dates Back To ",
       x$DatesBackTo,
       "</b></h3><div>",
       x$Description,
       "</div><br>",
       image75,
-      "</div>"
+      "</div><div style=\"background-color: #fff; padding: 8px; \"><small>",
+      x$Attribution,
+      "</small></div>"
     ), 
     group = x$DatesBackTo
   ) %>%
