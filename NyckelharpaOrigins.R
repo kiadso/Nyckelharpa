@@ -26,7 +26,7 @@ leaflet(x) %>%
       x$Description,
       "</div><br>",
       image75,
-      "</div><div style=\"background-color: #fff; padding: 8px; \"><small>",
+      "</div><div style=\"background-color: #fff; padding: 8px; \"><small>Photo:",
       x$Attribution,
       "</small></div>"
     ), 
