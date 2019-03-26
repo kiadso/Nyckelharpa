@@ -1,3 +1,17 @@
+---
+title: "Nyckelharpa Origins"
+author: "Genelle Denzin"
+date: "March 22, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+```
+
+## Nyckelharpa Origins
+
+```{r}
 library(leaflet)
 library(tidyverse)
 library(htmlwidgets)
@@ -34,5 +48,6 @@ origins <- leaflet(x) %>%
   ) %>%
   addLayersControl(overlayGroups = x$DatesBackTo,
                    options = layersControlOptions(collapsed = FALSE))
-origins  
-# saveWidget(origins, "Nyckelharpa_Origins/NyckelharpaOrigins.html", title = "Nyckelharpa Origins")
+saveWidget(origins, "NyckelharpaOrigins.html", title = "Nyckelharpa Origins")
+```
+
