@@ -19,17 +19,18 @@ origins <- leaflet(x) %>%
   addCircleMarkers(
     lng = ~ Longitude,
     lat = ~ Latitude,
-    popup = paste0(
+    popup = 
+      paste0(
       "<div style=\"background-color: #fff; padding: 8px;\"><h3><b>Dates Back To ",
       x$DatesBackTo,
       "</b></h3><div>",
       x$Description,
       "</div><br>",
       image75,
-      "</div><div style=\"background-color: #fff; padding: 8px; \"><small>Photo:",
-      x$Attribution,
-      "</small></div>"
-    ), 
+    "</div><div style=\"background-color: #fff; padding: 8px; \"><small>Photo:",
+    x$Attribution,
+    "</small></div>"
+    ),
     group = x$DatesBackTo
   ) %>%
   addLayersControl(overlayGroups = x$DatesBackTo,
