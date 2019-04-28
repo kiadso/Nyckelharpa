@@ -10,9 +10,6 @@ shinyServer(function(input, output) {
    
   output$originsMap <- shinyRenderWidget({
     
-    # getwd()
-    # load("NyckelharpaOrigins.html")
-    
     x <- read_xlsx("NyckelharpaHistoryData.xlsx") %>%
       arrange(DatesBackTo)
 
@@ -39,11 +36,11 @@ shinyServer(function(input, output) {
         x$Attribution,
         "</small></div>"
         ),
+        popupOptions = popupOptions(keepInView = TRUE),
         group = x$DatesBackTo
       ) %>%
       addLayersControl(overlayGroups = x$DatesBackTo,
                        options = layersControlOptions(collapsed = FALSE))
-    
     
   })
   

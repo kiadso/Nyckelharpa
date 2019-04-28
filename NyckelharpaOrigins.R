@@ -31,6 +31,7 @@ origins <- leaflet(x) %>%
     x$Attribution,
     "</small></div>"
     ),
+    popupOptions = popupOptions(keepInView = TRUE),
     group = x$DatesBackTo
   ) %>%
   addLayersControl(overlayGroups = x$DatesBackTo,
