@@ -13,7 +13,7 @@ shinyServer(function(input, output) {
     # getwd()
     # load("NyckelharpaOrigins.html")
     
-    # x <- read_xlsx("NyckelharpaHistoryData.xlsx") %>%
+    x <- read_xlsx("NyckelharpaHistoryData.xlsx") %>%
       arrange(DatesBackTo)
 
     image75 <- popupImage(x$Localimage,
@@ -21,7 +21,7 @@ shinyServer(function(input, output) {
                           width = "200px",
                           height = "100%")
 
-    origins <- leaflet(x) %>%
+    leaflet(x) %>%
       setView(lng = 16.5, lat = 57, zoom = 3.5) %>%
       addProviderTiles("Esri.NatGeoWorldMap") %>%
       addCircleMarkers(
@@ -43,7 +43,7 @@ shinyServer(function(input, output) {
       ) %>%
       addLayersControl(overlayGroups = x$DatesBackTo,
                        options = layersControlOptions(collapsed = FALSE))
-    origins
+    
     
   })
   
