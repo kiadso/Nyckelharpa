@@ -5,8 +5,8 @@ fluidPage(
     shinyWidgetOutput(
       outputId = "map",
       name = "originsMap",
-      width = "300px",
-      height = "400px"
+      width = "100%",
+      height = "100%"
     )
   )
 )
