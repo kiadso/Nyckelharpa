@@ -1,12 +1,12 @@
 
-library(shiny)
-library(leaflet)
-shinyUI(fluidPage(
+fluidPage(
   titlePanel("Nyckelharpa Origins"),
-      mainPanel(
-       shinyWidgetOutput(outputId = "map", 
-                         name = "originsMap",
-                         width = "100%",
-                         height = "100%")
+  mainPanel(
+    shinyWidgetOutput(
+      outputId = "map",
+      name = "originsMap",
+      width = "300px",
+      height = "400px"
     )
-))
+  )
+)
