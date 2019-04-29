@@ -1,47 +1,10 @@
-library(shiny)
-library(leaflet)
-library(dplyr)
-library(htmlwidgets)
-library(rvest)
-library(readxl)
-library(mapview)
+
+
 
 shinyServer(function(input, output) {
-   
-  output$originsMap <- shinyRenderWidget({
-    
-    x <- read_xlsx("NyckelharpaHistoryData.xlsx") %>%
-      arrange(DatesBackTo)
-
-    image75 <- popupImage(x$Localimage,
-                          src = "local",
-                          width = "200px",
-                          height = "100%")
-
-    leaflet(x) %>%
-      setView(lng = 16.5, lat = 57, zoom = 3.5) %>%
-      addProviderTiles("Esri.NatGeoWorldMap") %>%
-      addCircleMarkers(
-        lng = ~ Longitude,
-        lat = ~ Latitude,
-        popup =
-          paste0(
-          "<div style=\"background-color: #fff; padding: 8px;\"><h3><b>Dates Back To ",
-          x$DatesBackTo,
-          "</b></h3><div>",
-          x$Description,
-          "</div><br>",
-          image75,
-        "</div><div style=\"background-color: #fff; padding: 8px; \"><small>Photo:",
-        x$Attribution,
-        "</small></div>"
-        ),
-        popupOptions = popupOptions(keepInView = TRUE),
-        group = x$DatesBackTo
-      ) %>%
-      addLayersControl(overlayGroups = x$DatesBackTo,
-                       options = layersControlOptions(collapsed = FALSE))
-    
-  })
+  output$originsMap <- shinyRenderWidget(origins, 
+                                         env = 0, 
+                                         outputFunction = "map", 
+                                         quoted = FALSE)
   
 })
