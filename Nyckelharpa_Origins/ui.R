@@ -2,9 +2,8 @@
 fluidPage(
   titlePanel("Nyckelharpa Origins"),
   mainPanel(
-    shinyWidgetOutput(
+    leafletOutput(
       outputId = "map",
-      name = "originsMap",
       width = "100%",
       height = "100%"
     )
