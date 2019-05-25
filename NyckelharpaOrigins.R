@@ -37,4 +37,6 @@ origins <- leaflet(x) %>%
   addLayersControl(overlayGroups = x$DatesBackTo,
                    options = layersControlOptions(collapsed = FALSE))
 origins  
-# saveWidget(origins, "Nyckelharpa_Origins/NyckelharpaOrigins.html", title = "Nyckelharpa Origins")
+
+# saveWidget(origins, "Nyckelharpa_Origins/NyckelharpaOrigins.html", 
+# title = "Nyckelharpa Origins")
