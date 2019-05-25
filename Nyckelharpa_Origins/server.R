@@ -1,5 +1,8 @@
 
 
+
 function(input, output) {
-  output$originsMap <- renderLeaflet(origins)
+  output$originsMap <- renderLeaflet({
+    origins
+  })
 }
