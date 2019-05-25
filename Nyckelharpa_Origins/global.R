@@ -2,13 +2,11 @@ library(shiny)
 library(leaflet)
 library(dplyr)
 library(htmlwidgets)
-library(rvest)
 library(readxl)
 library(mapview)
 library(here)
 
-x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>%
-  arrange(DatesBackTo)
+x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>% arrange(DatesBackTo)
 
 image75 <- popupImage(x$Localimage,
                       src = "local",
@@ -38,3 +36,4 @@ origins <- leaflet(x) %>%
   ) %>%
   addLayersControl(overlayGroups = x$DatesBackTo,
                    options = layersControlOptions(collapsed = FALSE))
+
