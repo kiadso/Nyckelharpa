@@ -4,12 +4,14 @@ library(dplyr)
 library(htmlwidgets)
 library(readxl)
 library(mapview)
+library(leafpop)
 library(here)
+#library(ggmap)
 
 x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>% arrange(DatesBackTo)
 
-image75 <- popupImage(x$Localimage,
-                      src = "local",
+image75 <- popupImage(x$RemoteImage,
+                      src = "remote",
                       width = "200px",
                       height = "100%")
 
