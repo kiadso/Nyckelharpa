@@ -4,8 +4,9 @@ library(htmlwidgets)
 library(rvest)
 library(readxl)
 library(mapview)
+library(here)
 
-x <- read_xlsx("NyckelharpaHistoryData.xlsx") %>%
+x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>%
   arrange(DatesBackTo)
 
 image75 <- popupImage(x$Localimage, 
