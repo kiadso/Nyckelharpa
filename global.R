@@ -8,7 +8,7 @@ library(leafpop)
 library(here)
 #library(ggmap)
 
-x <- read_xlsx(here("Nyckelharpa_Origins/NyckelharpaHistoryData.xlsx")) %>% arrange(DatesBackTo)
+x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>% arrange(DatesBackTo)
 
 image75 <- popupImage(x$RemoteImage,
                       src = "remote",
