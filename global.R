@@ -25,7 +25,7 @@ x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>%
     Century == "1200's" ~ "#FF0000",
     Century == "1300's" ~ "#FF7F00",
     Century == "1400's" ~ "#FFFF00",
-    Century == "1500's" ~ "#00FF00",
+    Century == "1500's" ~ "#00B300",
     Century == "1600's" ~ "#0000FF",
     Century == "1700's" ~ "#4B0082",
     Century == "1800's" ~ "#9400D3",
