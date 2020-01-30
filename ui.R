@@ -15,7 +15,7 @@ navbarPage(
              ),
              column(
                10,
-               HTML("<strong>Click each dot for historical context.</strong><br>"),
+               HTML("<strong>Click the Centuries to see where nyckelharpas have been found to exist. <br>Click each dot for historical context.</strong><br>"),
                leafletOutput(
                  outputId = "originsMap",
                  height = 600,
