@@ -1,7 +1,6 @@
 library(leaflet)
-library(tidyverse)
+library(dplyr)
 library(htmlwidgets)
-library(rvest)
 library(readxl)
 library(mapview)
 
