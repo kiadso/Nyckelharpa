@@ -13,7 +13,7 @@ function(input, output) {
     
     leaflet(x) %>%
       setView(lng = 16.5, lat = 57, zoom = 4.5) %>%
-      addProviderTiles("Esri.NatGeoWorldMap") %>%
+      addProviderTiles("Esri.WorldTopoMap") %>%
       addCircleMarkers(
         lng = ~ Longitude,
         lat = ~ Latitude,
