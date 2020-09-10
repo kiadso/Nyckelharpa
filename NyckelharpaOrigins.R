@@ -8,7 +8,7 @@ library(here)
 x <- read_xlsx(here("NyckelharpaHistoryData.xlsx")) %>%
   arrange(DatesBackTo)
 
-image75 <- popupImage(x$Localimage, 
+image75 <- popupImage(x$RemoteImage, 
                       src = "local", 
                       width = "200px", 
                       height = "100%")
